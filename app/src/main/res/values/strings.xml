@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">evaluable</string>
+    <string name="mail">Correo</string>
+    <string name="pass">Contraseña</string>
+    <string name="forgotPass">Olvidaste tu contraseña?</string>
+    <string name="nom">Nombre</string>
+    <string name="login">Login</string>
+    <string name="createAct">Crear cuenta</string>
+</resources>
