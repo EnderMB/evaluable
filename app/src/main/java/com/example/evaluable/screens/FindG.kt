@@ -9,11 +9,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.evaluable.Search
+import com.example.evaluable.bd.ViewModel
 import com.example.evaluable.comm.Texty
 import com.example.evaluable.comm.TextyF
 
 @Composable
-fun FindG(navHostController: NavHostController){
+fun FindG(navHostController: NavHostController, ViewModel: ViewModel){
+    ViewModel.cleanFields()
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier

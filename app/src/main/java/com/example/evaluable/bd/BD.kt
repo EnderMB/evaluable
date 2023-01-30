@@ -23,13 +23,14 @@ import com.example.evaluable.comm.ButtonText
 import com.example.evaluable.comm.ElementsTxt
 import com.example.evaluable.comm.MessageTxt
 import com.example.evaluable.bd.Regalos
+import com.example.evaluable.bd.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
 
 val db = FirebaseFirestore.getInstance()
 val nombre_coleccion = "regalos"
 
 @Composable
-fun SaveDat(id: String, nom: String, obtenido: String, precio: String) {
+fun SaveDat(id: ViewModel, nom: String, obtenido: String, precio: String) {
     var id = id
     var nom = nom
     var obtenido = obtenido
@@ -261,6 +262,7 @@ fun Search(find_code: String) {
 @Composable
 fun Show() {
     var datos by remember { mutableStateOf("") }
+
     var regalo = rememberSaveable { mutableListOf<Regalos>() }
 
     datos = ""
@@ -321,45 +323,53 @@ fun ItemGift(regalo: Regalos) {
     ) {
         Column() {
 
-            Text(
-                text = regalo.id,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(10.dp),
-                color = Color(0xFFFFFDFD),
-                fontSize = 18.sp,
-                textAlign = TextAlign.Center
-            )
+            regalo.id?.let {
+                Text(
+                    text = it,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    color = Color(0xFFFFFDFD),
+                    fontSize = 18.sp,
+                    textAlign = TextAlign.Center
+                )
+            }
 
-            Text(
-                text = regalo.nom,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(10.dp),
-                color = Color(0xFFFFFDFD),
-                fontSize = 18.sp,
-                textAlign = TextAlign.Center
-            )
+            regalo.nom?.let {
+                Text(
+                    text = it,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    color = Color(0xFFFFFDFD),
+                    fontSize = 18.sp,
+                    textAlign = TextAlign.Center
+                )
+            }
 
-            Text(
-                text = regalo.obtenido,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(10.dp),
-                color = Color(0xFFFFFDFD),
-                fontSize = 18.sp,
-                textAlign = TextAlign.Center
-            )
+            regalo.obtenido?.let {
+                Text(
+                    text = it,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    color = Color(0xFFFFFDFD),
+                    fontSize = 18.sp,
+                    textAlign = TextAlign.Center
+                )
+            }
 
-            Text(
-                text = regalo.precio,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(10.dp),
-                color = Color(0xFFFFFDFD),
-                fontSize = 18.sp,
-                textAlign = TextAlign.Center
-            )
+            regalo.precio?.let {
+                Text(
+                    text = it,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    color = Color(0xFFFFFDFD),
+                    fontSize = 18.sp,
+                    textAlign = TextAlign.Center
+                )
+            }
 
         }
     }

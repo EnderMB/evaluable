@@ -9,10 +9,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.evaluable.Show
+import com.example.evaluable.bd.ViewModel
 import com.example.evaluable.comm.Texty
 
 @Composable
-fun ShowG(navHostController: NavHostController){
+fun ShowG(navHostController: NavHostController, ViewModel: ViewModel){
     Column(
         modifier = Modifier
             .fillMaxSize()

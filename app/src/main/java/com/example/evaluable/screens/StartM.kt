@@ -11,10 +11,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.example.evaluable.bd.ViewModel
 import com.example.evaluable.comm.ButtonX
 
 @Composable
-fun StartM(navController: NavHostController){
+fun StartM(navController: NavHostController, ViewModel: ViewModel){
     Column(modifier = Modifier
         .fillMaxSize()
     ){
